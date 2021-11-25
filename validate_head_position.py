@@ -204,21 +204,22 @@ def validate_head_position(filepath):
             
             # print('div by zero error')
         if ang1 >= 48:
-            print('Head down')
+            #print('Head down')
             cv2.putText(img, 'Head down', (30, 30), font, 2, (255, 255, 128), 3)
-            positon = "head_down"
+            position = "head_down"
         elif ang1 <= -48:
-            print('Head up')
+            #print('Head up')
             cv2.putText(img, 'Head up', (30, 30), font, 2, (255, 255, 128), 3)
             position = "head_up"
         if ang2 >= 48:
-            print('Head right')
+            #print('Head right')
             cv2.putText(img, 'Head right', (90, 30), font, 2, (255, 255, 128), 3)
             position = "head_right"
         elif ang2 <= -48:
-            print('Head left')
+            #print('Head left')
             cv2.putText(img, 'Head left', (90, 30), font, 2, (255, 255, 128), 3)
             position = "head_left"
+        
         cv2.putText(img, str(ang1), tuple(p1), font, 2, (128, 255, 255), 3)
         cv2.putText(img, str(ang2), tuple(x1), font, 2, (255, 255, 128), 3)
 
@@ -228,6 +229,6 @@ def validate_head_position(filepath):
     #if cv2.waitK   
     return position
 
-filepath = '/home/elio/Documentos/personal/onpe/Proctoring-AI/test1.jpg'
+filepath = '/home/elio/Documentos/personal/onpe/Proctoring-AI/fotos/test2.jpg'
 position = validate_head_position(filepath)
 print(position)
